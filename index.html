@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สินอำไพวงศ์แมนชั่น</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>สินอำไพวงศ์แมนชั่น</h1>
+<p>ซ.บางนาตราด43 ถ.บางนาตราด บางแก้ว บางพลี สมุทรปราการ</p>
+<a href="#rooms" class="button">ดูห้องพัก</a>
+</header>
+
+<section class="section" id="rooms">
+<h2>ห้องพักของเรา</h2>
+<div class="rooms">
+    <div class="room">
+        <img src="roomA1.png" alt="ห้องพัก A">
+        <div class="room-content">
+            <h3>ห้องแอร์</h3>
+            <p>ห้องพักกว้างขวางพร้อมเครื่องปรับอากาศ ตกแต่งเรียบง่าย อยู่สบาย</p>
+        </div>
+    </div>
+    <div class="room">
+        <img src="roomA.png" alt="ห้องพัก B">
+        <div class="room-content">
+            <h3>ห้องพัดลม</h3>
+            <p>ห้องพักสบายๆ พร้อมพัดลม เหมาะสำหรับผู้ที่ต้องการความเรียบง่าย</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="section">
+    <h2>สิ่งอำนวยความสะดวกและที่ตั้ง</h2>
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'facilities')">สิ่งอำนวยความสะดวก</button>
+        <button class="tab-button" onclick="openTab(event, 'locations')">ที่ตั้ง</button>
+        <button class="tab-button" onclick="openTab(event, 'nearby')">สถานที่ใกล้เคียง</button>
+    </div>
+
+    <div id="facilities" class="tab-content active">
+        <h3>สิ่งอำนวยความสะดวก</h3>
+        <ul>
+            <li>อินเทอร์เน็ต Wi-Fi ฟรี</li>
+            <li>ที่จอดรถ</li>
+            <li>ระบบรักษาความปลอดภัย 24 ชม.</li>
+            <li>เครื่องซักผ้าหยอดเหรียญ</li>
+            <li>ตู้น้ำดื่มหยอดเหรียญ</li>
+        </ul>
+    </div>
+
+    <div id="locations" class="tab-content">
+        <h3>ที่ตั้งของเรา</h3>
+        <p>สินอำไพวงศ์แมนชั่น ตั้งอยู่ที่ ซ.บางนาตราด43 ถ.บางนาตราด บางแก้ว บางพลี สมุทรปราการ</p>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.327891294863!2d100.70258197500966!3d13.69348498668987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d4d3c6d6d6d6d%3A0x6d6d6d6d6d6d6d6d!2z4Lio4Liw4LiB4Lix4Lin4Liy4LiB4Liy4LiU4Liy4Lir4Liy4Lir4Liy4LiZ4Liy4Lir4Liy!5e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <div id="nearby" class="tab-content">
+        <h3>สถานที่ใกล้เคียง</h3>
+        <ul>
+            <li>สนามบินสุวรรณภูมิ (ประมาณ 15 นาที)</li>
+            <li>เมกาบางนา (ประมาณ 10 นาที)</li>
+            <li>เซ็นทรัลบางนา (ประมาณ 15 นาที)</li>
+            <li>มหาวิทยาลัยหัวเฉียวเฉลิมพระเกียรติ</li>
+            <li>โรงพยาบาลจุฬารัตน์ 1</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <h2>ติดต่อเรา</h2>
+    <div class="contact-box">
+        <p>หากมีข้อสงสัยหรือต้องการสอบถามรายละเอียดเพิ่มเติม</p>
+        <p>โทร: 08XXXXXXXX (ตัวอย่าง)</p>
+        <p>หรือเยี่ยมชมที่แมนชั่นได้โดยตรง</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 สินอำไพวงศ์แมนชั่น. All rights reserved.</p>
+</footer>
+
+<script>
+// Smooth Scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Tab Functionality
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Set default tab to active on load
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('.tab-button.active').click();
+});
+
+</script>
+
+</body>
+</html>
